@@ -9,7 +9,8 @@ pip3 install pytesseract
 pip3 install pdf2image
 brew install xpdf
 
-sudo apt-get install tesseract-ocr
+sudo apt-get install tesseract-ocr -> linux
+brew install tesseract -> macos
 
 pip install llama-cpp-python
 ```
