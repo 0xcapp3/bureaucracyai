@@ -161,5 +161,6 @@ cython_debug/
 
 custom_llm/docs/
 custom_llm/model/
+custom_llm/img/
 
 .DS_Store
