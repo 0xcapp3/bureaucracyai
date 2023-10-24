@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from ctransformers import AutoModelForCausalLM
 from pydantic import BaseModel
 
+from util import ocr
+
 # Pydantic model to represent the request body the Cat sends
 class RequestBody(BaseModel):
     text: str
@@ -20,6 +22,7 @@ async def startup():
     print("FastAPI is starting up!")
     print("Using OCR approach we have to extract file content into other file/s into ../cat/static/ocr/ folder.")
     print("Then with the import ocr docs plugin chechire-cat will put this content inside rabbit hole.")
+    ocr.ocr_process()
 
 
 # GET endpoint method 
