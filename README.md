@@ -14,5 +14,5 @@ brew install tesseract -> macos
 
 pip3 install pytesseract
 
-pip install llama-cpp-python
+pip install llama-cpp-python -> NO
 ```
