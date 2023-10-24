@@ -6,7 +6,7 @@ Group project for LAP course in Sapienza.
 
 pip3 install PIL (Pillow)
 
-brew install xpdf
+brew install poppler
 pip3 install pdf2image
 
 sudo apt-get install tesseract-ocr -> linux
