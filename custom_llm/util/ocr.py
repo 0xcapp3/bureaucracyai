@@ -96,47 +96,42 @@ def ocr_process():
 					
 					# print("[custom_llm] image list")
 					# print(image_file_list)
-					
-					"""
-					Part #2 - Recognizing text from the images using OCR
-					"""
-					if ocr_is_empty:
-						with open(TEXT_FILE_PATH, "a") as output_file:
-							# Open the file in append mode so that
-							# All contents of all images are added to the same file
-
-							# Iterate from 1 to total number of pages
-							for image_file in image_file_list:
-
-								# Set filename to recognize text from
-								# Again, these files will be:
-								# page_1.jpg
-								# page_2.jpg
-								# ....
-								# page_n.jpg
 				
-								# Recognize the text as string in image using pytesserct
-								text = str(((pytesseract.image_to_string(Image.open(image_file)))))
-
-								# The recognized text is stored in variable text
-								# Any string processing may be applied on text
-								# Here, basic formatting has been done:
-								# In many PDFs, at line ending, if a word can't
-								# be written fully, a 'hyphen' is added.
-								# The rest of the word is written in the next line
-								# Eg: This is a sample text this word here GeeksF-
-								# orGeeks is half on first line, remaining on next.
-								# To remove this, we replace every '-\n' to ''.
-								text = text.replace("-\n", "")
-
-								# Finally, write the processed text to the file.
-								output_file.write(text)
+				print(f"[custom llm] docs already trasformed into images for {f}")
+					
+				"""
+				Part #2 - Recognizing text from the images using OCR
+				"""
+				if ocr_is_empty:
+					with open(TEXT_FILE_PATH, "a") as output_file:
+						# Open the file in append mode so that
+						# All contents of all images are added to the same file
+						# Iterate from 1 to total number of pages
+						for image_file in image_file_list:
+							# Set filename to recognize text from
+							# Again, these files will be:
+							# page_1.jpg
+							# page_2.jpg
+							# ....
+							# page_n.jpg
+			
+							# Recognize the text as string in image using pytesserct
+							text = str(((pytesseract.image_to_string(Image.open(image_file)))))
+							# The recognized text is stored in variable text
+							# Any string processing may be applied on text
+							# Here, basic formatting has been done:
+							# In many PDFs, at line ending, if a word can't
+							# be written fully, a 'hyphen' is added.
+							# The rest of the word is written in the next line
+							# Eg: This is a sample text this word here GeeksF-
+							# orGeeks is half on first line, remaining on next.
+							# To remove this, we replace every '-\n' to ''.
+							text = text.replace("-\n", "")
+							# Finally, write the processed text to the file.
+							output_file.write(text)
 		
 
-					print(f"[custom llm] ocr folder already filled with generated txts from images for {pdf}")
-
-
-				print(f"[custom llm] docs already trasformed into images for {pdf}")
+				print(f"[custom llm] ocr folder already filled with generated txts from images for {f}")
 
 	else:
 		print("[custom_llm] no docs found")
