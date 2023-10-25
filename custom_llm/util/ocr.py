@@ -133,5 +133,5 @@ def ocr_process():
 
 				print(f"[custom llm] ocr folder already filled with generated txts from images for {f}")
 
-	else:
-		print("[custom_llm] no docs found")
+
+	print("[custom_llm] no docs found")
