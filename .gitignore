@@ -167,3 +167,5 @@ custom_llm/img/
 
 .idea/
 .vscode/
+
+cheshire-cat/run.sh
