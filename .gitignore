@@ -164,3 +164,6 @@ custom_llm/model/
 custom_llm/img/
 
 .DS_Store
+
+.idea/
+.vscode/
